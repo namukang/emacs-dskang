@@ -22,6 +22,9 @@
 ;; Change Emacs font size
 (set-face-attribute 'default nil :height 100)
 
+;; Start Emacs server
+(server-start)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Evil mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

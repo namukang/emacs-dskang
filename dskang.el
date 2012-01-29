@@ -20,7 +20,7 @@
             kill-buffer-query-functions))
 
 ;; Change Emacs font size
-(set-face-attribute 'default (selected-frame) :height 100)
+(set-face-attribute 'default nil :height 100)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Evil mode

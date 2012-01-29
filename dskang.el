@@ -50,6 +50,10 @@
 	(push 'escape unread-command-events))
        (t (setq unread-command-events (append unread-command-events
 					      (list evt))))))))
+
+;; Set cursor color
+(setq evil-default-cursor '("white" box))
+
 ;; Show red box if in Emacs mode
 (setq evil-emacs-state-cursor '("red" box))
 
@@ -66,6 +70,49 @@
 
 ;; Lisp
 (evil-define-key 'visual emacs-lisp-mode-map ",," 'eval-region)
+
+;; Org-mode
+(defun always-insert-item ()
+     (interactive)
+     (if (not (org-in-item-p))
+       (insert "\n- ")
+       (org-insert-item)))
+
+(add-hook 'org-mode-hook
+          (lambda ()
+(evil-define-key 'normal org-mode-map "O" (lambda ()
+                                            (interactive)
+                                            (end-of-line)
+                                            (org-insert-heading t)
+                                            (evil-append nil)
+                                            ))
+
+(evil-define-key 'normal org-mode-map "o" (lambda ()
+                                            (interactive)
+                                            (end-of-line)
+                                            (always-insert-item)
+                                            (evil-append nil)
+                                            ))
+
+(evil-define-key 'normal org-mode-map "t" (lambda ()
+                     (interactive)
+                     (end-of-line)
+                     (org-insert-todo-heading nil)
+                     (evil-append nil)
+                     ))
+
+(evil-define-key 'normal org-mode-map "T" 'org-todo) ; mark a TODO item as DONE
+(evil-define-key 'normal org-mode-map "-" 'org-cycle-list-bullet) ; change bullet style
+
+(evil-define-key 'normal org-mode-map (kbd "M-l") 'org-metaright)
+(evil-define-key 'normal org-mode-map (kbd "M-h") 'org-metaleft)
+(evil-define-key 'normal org-mode-map (kbd "M-k") 'org-metaup)
+(evil-define-key 'normal org-mode-map (kbd "M-j") 'org-metadown)
+(evil-define-key 'normal org-mode-map (kbd "M-L") 'org-shiftmetaright)
+(evil-define-key 'normal org-mode-map (kbd "M-H") 'org-shiftmetaleft)
+(evil-define-key 'normal org-mode-map (kbd "M-K") 'org-shiftmetaup)
+(evil-define-key 'normal org-mode-map (kbd "M-J") 'org-shiftmetadown)
+))
 
 ;; Add "j" and "k" keybindings to some Emacs modes
 (add-hook 'org-mode-hook

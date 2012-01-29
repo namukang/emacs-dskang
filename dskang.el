@@ -88,11 +88,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Shell
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Don't allow shell prompt to be deleted
 (setq comint-prompt-read-only t)
+
+;; Add to exec-path
+(push "/usr/local/bin" exec-path)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Indentation
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Tab width
+(setq-default tab-width 4)
+
 ;; Auto-indentation
 (dolist (hook '(c-mode-hook
                 java-mode-hook

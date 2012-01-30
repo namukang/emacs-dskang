@@ -19,6 +19,9 @@
       (remq 'process-kill-buffer-query-function
             kill-buffer-query-functions))
 
+; Display the column number in the status bar.
+(setq column-number-mode t)
+
 ;; Change Emacs font size
 (set-face-attribute 'default nil :height 100)
 

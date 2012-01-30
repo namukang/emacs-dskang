@@ -1,5 +1,6 @@
 .smex-items
-auto-save-list
-backups
-elpa
+auto-save-list/
+backups/
+elpa/
 places
+el-get/

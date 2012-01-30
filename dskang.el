@@ -33,8 +33,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq evil-want-C-u-scroll t)
 (setq evil-want-C-w-in-emacs-state t)
-(add-to-list 'load-path (concat esk-user-dir "/evil"))
-(require 'evil)
 (evil-mode 1)
 
 ;; Use 'jk' as ESC
@@ -164,3 +162,9 @@
 
 (add-hook 'python-mode-hook '(lambda () 
      (define-key python-mode-map "\C-m" 'newline-and-indent)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; File associations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'auto-mode-alist '("README" . text-mode))
+(add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))

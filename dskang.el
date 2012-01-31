@@ -142,9 +142,6 @@
 ;; Don't allow shell prompt to be deleted
 (setq comint-prompt-read-only t)
 
-;; Add to exec-path
-(push "/usr/local/bin" exec-path)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Indentation
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -1,3 +1,6 @@
+;; Add to exec-path
+(push "/usr/local/bin" exec-path)
+
 ;; Install el-get if it is not present
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (unless (require 'el-get nil t)
@@ -8,7 +11,8 @@
     (eval-print-last-sexp)))
 (setq el-get-sources
       '(el-get
-        evil))
+        evil
+        rhtml-mode))
 (el-get 'sync el-get-sources)
 
 ;; Add Marmalade as a package source

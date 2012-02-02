@@ -34,8 +34,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Evil mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq evil-want-C-u-scroll t)
-(setq evil-want-C-w-in-emacs-state t)
+;; Enable Evil mode in all buffers
 (evil-mode 1)
 
 ;; Use 'jk' as ESC

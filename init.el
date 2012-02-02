@@ -1,6 +1,10 @@
 ;; Add to exec-path
 (push "/usr/local/bin" exec-path)
 
+;; These variables change the way Evil is loaded
+(setq evil-want-C-u-scroll t)
+(setq evil-want-C-w-in-emacs-state t)
+
 ;; Install el-get if it is not present
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (unless (require 'el-get nil t)

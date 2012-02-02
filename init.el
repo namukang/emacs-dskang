@@ -36,6 +36,3 @@
 
 ;; Load theme
 (load-theme 'solarized-dark t)
-
-;; Save sessions
-(add-hook 'after-init-hook 'session-initialize)

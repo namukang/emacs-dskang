@@ -12,7 +12,8 @@
 (setq el-get-sources
       '(el-get
         evil
-        rhtml-mode))
+        rhtml-mode
+        yaml-mode))
 (el-get 'sync el-get-sources)
 
 ;; Add Marmalade as a package source
@@ -35,3 +36,6 @@
 
 ;; Load theme
 (load-theme 'solarized-dark t)
+
+;; Save sessions
+(add-hook 'after-init-hook 'session-initialize)

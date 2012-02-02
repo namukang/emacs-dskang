@@ -28,6 +28,9 @@
 ;; Start Emacs server
 (server-start)
 
+;; Make the minibuffer display unfinished commands instantly
+(setq echo-keystrokes 0.001)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Evil mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -142,6 +145,11 @@
 ;; Don't allow shell prompt to be deleted
 (setq comint-prompt-read-only t)
 
+;; Don't echo line in irb
+(defun echo-false-comint ()
+  (setq comint-process-echoes t))
+(add-hook 'inf-ruby-mode-hook 'echo-false-comint)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Indentation
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -152,6 +160,7 @@
 (dolist (hook '(c-mode-hook
                 java-mode-hook
                 html-mode-hook
+                rhtml-mode-hook
                 css-mode-hook
                 php-mode-hook
                 js-mode-hook))
@@ -161,7 +170,22 @@
      (define-key python-mode-map "\C-m" 'newline-and-indent)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; File associations
+;; Programming style
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(add-to-list 'auto-mode-alist '("README" . text-mode))
-(add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
+;; Turn on auto pairs globally
+(electric-pair-mode)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Org-mode
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-agenda-files '("~/Dropbox/org/" "~/Dropbox/org/courses/"))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ERC
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq erc-fill-column 72)
+;; Ignore useless messages
+(setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
+                                "324" "329" "332" "333" "338" "353" "477"))

@@ -207,3 +207,11 @@
 ;; Ignore useless messages
 (setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
                                 "324" "329" "332" "333" "338" "353" "477"))
+
+;; Save ERC logs
+(setq erc-log-insert-log-on-open nil)
+(setq erc-log-channels-directory "~/.erc/logs/")
+(setq erc-save-buffer-on-part nil
+      erc-save-queries-on-quit nil
+      erc-log-write-after-send t
+      erc-log-write-after-insert t)

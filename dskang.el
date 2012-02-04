@@ -210,7 +210,7 @@
 
 ;; Save ERC logs
 (setq erc-log-insert-log-on-open nil)
-(setq erc-log-channels-directory "~/.erc/logs/")
+(setq erc-log-channels-directory "~/.erc/")
 (setq erc-save-buffer-on-part nil
       erc-save-queries-on-quit nil
       erc-log-write-after-send t

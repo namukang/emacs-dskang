@@ -193,6 +193,9 @@
 ;; Enable whitespace mode everywhere
 (global-whitespace-mode 1)
 
+;; Javascript indentation
+(setq js-indent-level 2)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Org-mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

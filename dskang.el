@@ -44,6 +44,10 @@
              (buffer-name))))
 (global-set-key "\C-cd" 'toggle-current-window-dedication)
 
+;; Display date and time in status bar
+(setq display-time-day-and-date t)
+(display-time)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Evil mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -218,3 +222,4 @@
       erc-save-queries-on-quit nil
       erc-log-write-after-send t
       erc-log-write-after-insert t)
+

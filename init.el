@@ -17,6 +17,7 @@
       '(el-get
         evil
         rhtml-mode
+        php-mode-improved
         yaml-mode))
 (el-get 'sync el-get-sources)
 

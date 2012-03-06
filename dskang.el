@@ -161,10 +161,10 @@
 ;; Don't allow shell prompt to be deleted
 (setq comint-prompt-read-only t)
 
-;; Don't echo line in irb
+;; Don't echo line in comint-mode
 (defun echo-false-comint ()
   (setq comint-process-echoes t))
-(add-hook 'inf-ruby-mode-hook 'echo-false-comint)
+(add-hook 'comint-mode-hook 'echo-false-comint)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Indentation

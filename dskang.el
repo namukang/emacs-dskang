@@ -205,7 +205,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
-(setq org-agenda-files '("~/Dropbox/org/" "~/Dropbox/org/courses/"))
+(load-library "find-lisp")
+(setq org-agenda-files (cons "~/Dropbox/notes/" (find-lisp-find-files "~/Dropbox/courses/" "\.org$")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ERC

@@ -16,6 +16,7 @@
 (setq el-get-sources
       '(el-get
         evil
+        markdown-mode
         rhtml-mode
         php-mode-improved
         yaml-mode))

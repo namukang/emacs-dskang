@@ -19,6 +19,7 @@
         markdown-mode
         rhtml-mode
         php-mode-improved
+        auto-complete
         yaml-mode))
 (el-get 'sync el-get-sources)
 

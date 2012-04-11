@@ -74,9 +74,6 @@
        (t (setq unread-command-events (append unread-command-events
                                               (list evt))))))))
 
-;; Set cursor color
-(setq evil-default-cursor '("white" box))
-
 ;; Show red box if in Emacs mode
 (setq evil-emacs-state-cursor '("red" box))
 
@@ -153,7 +150,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Tramp
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'tramp)
 (setq tramp-default-method "ssh")
+(add-to-list 'tramp-default-proxies-alist
+             '("labpc-[0-9][0-9].cs.princeton.edu" nil "/ssh:dskang@portal:"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Shell
@@ -171,6 +171,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Tab width
 (setq-default tab-width 4)
+
+;; C indentation
+(setq-default c-basic-offset 4)
+
+;; Javascript indentation
+(setq js-indent-level 4)
 
 ;; Auto-indentation
 (dolist (hook '(c-mode-hook
@@ -196,9 +202,6 @@
 
 ;; Enable whitespace mode everywhere
 (global-whitespace-mode 1)
-
-;; Javascript indentation
-(setq js-indent-level 2)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Org-mode
@@ -226,4 +229,3 @@
       erc-save-queries-on-quit nil
       erc-log-write-after-send t
       erc-log-write-after-insert t)
-

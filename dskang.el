@@ -203,6 +203,9 @@
 ;; Enable whitespace mode everywhere
 (global-whitespace-mode 1)
 
+;; Get rid of mumamo background color
+(setq mumamo-background-colors nil)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Org-mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

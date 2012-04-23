@@ -176,7 +176,7 @@
 (setq-default c-basic-offset 4)
 
 ;; Javascript indentation
-(setq js-indent-level 4)
+(setq js-indent-level 2)
 
 ;; Auto-indentation
 (dolist (hook '(c-mode-hook

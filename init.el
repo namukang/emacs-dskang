@@ -33,12 +33,16 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 (defvar my-packages '(starter-kit
+                      solarized-theme
                       starter-kit-bindings)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
+
+;; Load theme
+(load-theme 'solarized-dark t)
 
 ;; Custom
 (custom-set-variables

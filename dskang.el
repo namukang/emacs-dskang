@@ -74,6 +74,9 @@
        (t (setq unread-command-events (append unread-command-events
                                               (list evt))))))))
 
+;; Set cursor color
+(setq evil-default-cursor '("white" box))
+
 ;; Show red box if in Emacs mode
 (setq evil-emacs-state-cursor '("red" box))
 

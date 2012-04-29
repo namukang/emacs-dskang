@@ -209,6 +209,9 @@
 ;; Get rid of mumamo background color
 (setq mumamo-background-colors nil)
 
+;; Turn off auto-fill-mode for HTML
+(add-hook 'html-mode-hook 'turn-off-auto-fill)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Org-mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -1,10 +1,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Emacs user interface
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Use command key as meta
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier 'nil)
-
 ;; Scroll one line at a time
 (setq scroll-step 1)
 

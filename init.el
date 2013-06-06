@@ -7,11 +7,11 @@
 
 ;; Install el-get if it is not present
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(unless (require 'el-get nil t)
+(unless (require 'el-get nil 'noerror)
   (with-current-buffer
       (url-retrieve-synchronously
        "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-    (end-of-buffer)
+    (goto-char (point-max))
     (eval-print-last-sexp)))
 (setq el-get-sources
       '(el-get
@@ -42,7 +42,7 @@
     (package-install p)))
 
 ;; Load theme
-(load-theme 'solarized-dark t)
+;; (load-theme 'solarized-dark t)
 
 ;; Custom
 (custom-set-variables
